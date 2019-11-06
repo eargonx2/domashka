@@ -1,31 +1,35 @@
-var randomAmount = 5;
-	minCharacter = 2;
-    maxCharacter = 6;
-
-var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-// var words = {alphabet[Math.ceil(Math.random()*25)]*minCharacter};
-// alert ('words');
+﻿var wordsAmount = +prompt('Введите количество рандомных значений, которые будут сгенерированы');
+	  minCharacter = +prompt('Минимальное количество символов');
+    maxCharacter = +prompt('Максимальное количество символов до 7');
+    maxCharacter++;     //увеличиваем на 1 т.к. length считает с 0
 
 
- 
-function makeid(length) {
+function generate(length) {              //генерируем случайные символы
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   var charactersLength = characters.length;
-   for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   for ( var i = 1; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
    }
    return result;
 }
 
 
-mass = ['amountWords'];
+mass = [];  
 var i = 1;
-while (i<=randomAmount) {
-	mass.push (makeid(Math.ceil(Math.random() * (maxCharacter - minCharacter) + minCharacter)));
+while (i<=wordsAmount) {
+	mass.push (generate(Math.ceil(Math.random() * (maxCharacter - minCharacter) + minCharacter)));           //заносим сгенерированые слова в массив
 	i++
 }
-console.log (mass);
+
+var length = mass.filter(word => word.length == 1);
+
+    counter = 0;
+
+for (var key in length) {
+  counter++;
+}
+if (counter!=0){
+alert(counter+" words with 1 characters");}          //выводим пользователю слова с 1 символом и т.д.
 
 var length2 = mass.filter(word => word.length == 2);
 
@@ -34,7 +38,8 @@ var length2 = mass.filter(word => word.length == 2);
 for (var key in length2) {
   counter++;
 }
-alert(counter+" words with 2 characters");
+if (counter!=0){
+alert(counter+" words with 2 characters");}
 
 var length3 = mass.filter(word => word.length == 3);
 
@@ -43,7 +48,8 @@ var length3 = mass.filter(word => word.length == 3);
 for (var key in length3) {
   counter++;
 }
-alert(counter+" words with 3 characters");
+if (counter!=0){
+alert(counter+" words with 3 characters");}
 
 var length4 = mass.filter(word => word.length == 4);
 
@@ -52,7 +58,8 @@ var length4 = mass.filter(word => word.length == 4);
 for (var key in length4) {
   counter++;
 }
-alert(counter+" words with 4 characters");
+if (counter!=0){
+alert(counter+" words with 4 characters");}
 
 var length5 = mass.filter(word => word.length == 5);
 
@@ -61,7 +68,8 @@ var length5 = mass.filter(word => word.length == 5);
 for (var key in length5) {
   counter++;
 }
-alert(counter+" words with 5 characters");
+if (counter!=0){
+alert(counter+" words with 5 characters");}
 
 var length6 = mass.filter(word => word.length == 6);
 
@@ -70,5 +78,21 @@ var length6 = mass.filter(word => word.length == 6);
 for (var key in length6) {
   counter++;
 }
-alert(counter+" words with 6 characters");
+if (counter!=0){
+alert(counter+" words with 6 characters");}
 
+var length7 = mass.filter(word => word.length == 7);
+
+    counter = 0;
+
+for (var key in length7) {
+  counter++;
+}
+if (counter!=0){
+alert(counter+" words with 7 characters");}
+
+
+var sortMass = [];
+sortMass.push(length, length2, length3, length4, length5, length6, length7);   // создали новый массив и записываем в него слова с символами по возрастанию
+
+console.log(sortMass);
