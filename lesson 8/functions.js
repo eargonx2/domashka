@@ -7,7 +7,7 @@ mass = [];
 
 function generate(length) {              //генерируем случайные символы
    var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
    for ( var i = 1; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * characters.length));
    }
@@ -18,127 +18,42 @@ function generate(length) {              //генерируем случайны
  
 
 function amount (words) {
-	var result;
-	for (var i = 1; i < words; i++ ) {
-	result += mass.push (generate(Math.ceil(Math.random() * (maxCharacter - minCharacter) + minCharacter)));	
-	}
-	return result;
+  var result;
+  for (var i = 1; i < words; i++ ) {
+  result += mass.push (generate(Math.ceil(Math.random() * (maxCharacter - minCharacter) + minCharacter)));  
+  }
+  return result;
 }
 
 amount(wordsAmount);
 console.log(mass);
 
 
-// for (key in mass) {
-// 		if (mass[key].length == 1){
-// 			console.log(mass[key]);
-// 		}
-		
-// }
-	for (var key in mass){
- 		console.log (` ${mass[key].length} words with ${key} characters `);
- 	
- 	}
-function sortByLength (mass) {
-   return mass.sort((x,y) => x.length - y.length);
-}
-console.log(mass);
 
-function lensort(a,b)
-{
-var s1 = "" + a; //будет полюбому строка
-var s2 = "" + b;
-if(s1.length < s2.lenght){return -1;} //сравнить длины
-else if(s1.length > s2.length){return 1;}
-return 0;
-//или предыдущие три строки в одну:
-//return (st1.length < st2.length) ? -1 : (st1.length > st2.length) ? 1 : 0;
-};
+var obj = {};
 
-alert( arr.sort(lensort) );
-// mass.sort(function(a,b) {
-//  return a.length - b.length;
-// 	});
-// console.log(mass);
-//console.log(mass);
-// var i = 1;
-// while (i<=wordsAmount) {
-// 	mass.push (generate(Math.ceil(Math.random() * (maxCharacter - minCharacter) + minCharacter)));           //заносим сгенерированые слова в массив
-// 	i++
-// }
+const a = mass.filter(word => word.length == 1);
+const b = mass.filter(word => word.length == 2);
+const c = mass.filter(word => word.length == 3);
+const d = mass.filter(word => word.length == 4);
+const e = mass.filter(word => word.length == 5);
+const f = mass.filter(word => word.length == 6);
+const g = mass.filter(word => word.length == 7);
+var obj = {1:a, 2:b, 3:c, 4:d, 5:e, 6:f, 7:g};
+console.log(obj);
 
-// var length = mass.filter(word => word.length == 1);
+if ((obj[1]).length != 0){
+console.log((obj[1]).length + ' words with 1 character');}
+if ((obj[2]).length != 0){
+console.log((obj[2]).length + ' words with 2 characters')};
+if ((obj[3]).length != 0){
+console.log((obj[3]).length + ' words with 3 characters')};
+if ((obj[4]).length != 0){
+console.log((obj[4]).length + ' words with 4 characters')};
+if ((obj[5]).length != 0){
+console.log((obj[5]).length + ' words with 5 characters')};
+if ((obj[6]).length != 0){
+console.log((obj[6]).length + ' words with 6 characters')};
+if ((obj[7]).length != 0){
+console.log((obj[7]).length + ' words with 7 characters')};
 
-//     counter = 0;
-
-// for (var key in length) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 1 characters");}          //выводим пользователю слова с 1 символом и т.д.
-
-// var length2 = mass.filter(word => word.length == 2);
-
-//     counter = 0;
-
-// for (var key in length2) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 2 characters");}
-
-// var length3 = mass.filter(word => word.length == 3);
-
-//     counter = 0;
-
-// for (var key in length3) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 3 characters");}
-
-// var length4 = mass.filter(word => word.length == 4);
-
-//     counter = 0;
-
-// for (var key in length4) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 4 characters");}
-
-// var length5 = mass.filter(word => word.length == 5);
-
-//     counter = 0;
-
-// for (var key in length5) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 5 characters");}
-
-// var length6 = mass.filter(word => word.length == 6);
-
-//     counter = 0;
-
-// for (var key in length6) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 6 characters");}
-
-// var length7 = mass.filter(word => word.length == 7);
-
-//     counter = 0;
-
-// for (var key in length7) {
-//   counter++;
-// }
-// if (counter!=0){
-// console.log(counter+" words with 7 characters");}
-
-
-// var sortMass = [];
-// sortMass.push(length, length2, length3, length4, length5, length6, length7);   // создали новый массив и записываем в него слова с символами по возрастанию
-
-// console.log(sortMass);
