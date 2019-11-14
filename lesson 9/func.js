@@ -1,5 +1,5 @@
  
-var mass = ['adsd','basas','casas','casas' ];
+var mass = ['adsd','basas','casas','casas'];
 var newMass = [];
 
 mass.forEach(function(item, i, mass) {
