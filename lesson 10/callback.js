@@ -23,14 +23,14 @@ var runner = {
 }
 
 runner.$$tasks = function first(){
-setInterval( function(){
+setInterval(function(){
 console.log('Hello');
 }, 2000 );
 }
 runner.$$tasks();
 
 runner.$$tasks = function second(){
-setInterval( function(){
+setInterval(function(){
 console.log('World');
 }, 2000 );
 }
