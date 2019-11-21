@@ -1,16 +1,17 @@
 var arr = [1, -1, 2, -2, 3];
+var newArr = [];
 
-// var positiveArr = arr.filter(function(number) {
-//   return number > 0;
-// });
-
-// alert( positiveArr ); // 1,2,3
-
-
-// переписал фильтр с положительными числами
-
-for (key in arr) {
-	if (arr[key]>0) {
-		alert (arr[key]);
-	}
+function filter(arr, cb) {
+  if (!cb) return;
+  for (var i=0; i < arr.length; i++) {
+    if(cb(arr[i], i, arr)) {
+       newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }
+
+
+console.log(filter(arr, function (el) {
+return el > 0;
+}));
