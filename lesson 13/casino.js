@@ -29,5 +29,14 @@ if (this.lines[i][i] === this.lines[i][0] & this.lines[i][i] === this.lines[i][1
 	else {console.log (this.lines[i] + ' Не совпало!');}
 	
   }
+},
+
+ checkHorizLines: function () {
+ 	for (var i=0; i<this.lines[0].length; i++) {
+if (this.lines[0][i] === this.lines[1][i] & this.lines[0][i] === this.lines[2][i]) {
+	console.log (this.lines[i] + ' Совпадение!');}
+	else {console.log (this.lines[i] + ' Не совпало!');}
+	
+  }
 }
 }
