@@ -1,9 +1,9 @@
 function MilitaryResource(type, health, distance) {
-   this.type = type;
-   this.health = maxHealth = health;
-   this.maxHealth = maxHealth;
-   this.distance = maxDistance = distance;
-   this.maxDistance = maxDistance;
+	this.type = type;
+	this.health = maxHealth = health;
+	this.maxHealth = maxHealth;
+	this.distance = maxDistance = distance;
+	this.maxDistance = maxDistance;
 }
 
 
@@ -14,8 +14,8 @@ MilitaryResource.prototype.clone;
 
 
 function Squad(defaultResources) {
-   this.squad = [];
-   if (defaultResources) this.combineResources(defaultResources);
+	this.squad = [];
+	if (defaultResources) this.combineResources(defaultResources);
 }
 
 Squad.prototype.isReadyToMove;
@@ -30,16 +30,16 @@ var mag = new MilitaryResource('magician', 200,300);  // создаем ново
 
 
 MilitaryResource.prototype.isReadytoMove = function () {
-return this.distance <= this.maxDistance;
+	return this.distance <= this.maxDistance;
 }
 console.log(mag.isReadytoMove());
 MilitaryResource.prototype.isReadyToFight = function () {
-return this.health > 0;
+	return this.health > 0;
 }
 console.log(mag.isReadyToFight());
 MilitaryResource.prototype.restore = function () {
-return this.health = this.maxHealth,
-       this.distance = this.maxDistance;
+	return this.health = this.maxHealth,
+	this.distance = this.maxDistance;
 }
 
 mag.health = 20;  // занижаем hp
@@ -51,7 +51,7 @@ console.log(mag);
 
 
 MilitaryResource.prototype.clone = function () {
-return new MilitaryResource(this.type, this.health, this.maxHealth, this.distance, this.maxDistance);
+	return new MilitaryResource(this.type, this.health, this.maxHealth, this.distance, this.maxDistance);
 }
 
 var mg = mag.clone();  //клонируем юнит в новую переменную
