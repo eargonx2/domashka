@@ -1,42 +1,34 @@
-var Squad = (function() {
-	function Squad(defaultResources) {
-	this.squad = [];
-	if (defaultResources) this.combineResources(defaultResources);
-}
-Squad.prototype.combineResources = function (defaultResources) {
-	 this.squad = defaultResources;
-	}
+var Squad = (function () {
+    function Squad(defaultResources) {
+        this.squad = [];
+        if (defaultResources) this.combineResources(defaultResources);
+    }
 
-Squad.prototype.isReadyToMove = function (defaultResources) {
-	 return this.squad.some((obj)=>(obj.health > 0 && obj.distance > 0));
-	}
 
-Squad.prototype.isReadyToFight = function (defaultResources) {
-	 return this.squad.some((obj)=>(obj.health > 0));
-	}
+    Squad.prototype.isReadyToMove = function (defaultResources) {
+        return this.squad.some((obj) => (obj.health > 0 && obj.distance > 0));
+    }
 
-Squad.prototype.restore = function (defaultResources) {
-	 return this.squad.forEach((obj)=>(obj.health = this.maxHealth && obj.distance = this.maxDistance));
-	}
-	return Squad;
+    Squad.prototype.isReadyToFight = function (defaultResources) {
+        return this.squad.some((obj) => (obj.health > 0));
+    }
+
+    Squad.prototype.restore = function (defaultResources) {
+        squad.MilitaryResource = new MilitaryResource(this.type, this.health, this.maxHealth, this.distance, this.maxDistance);
+    }
+
+    Squad.prototype.getReadyToMoveResources = function (defaultResources) {
+        return this.squad.some((obj) => (obj.health > 0 && obj.distance > 0));
+    }
+    Squad.prototype.combineResources = function (defaultResources) {
+        this.squad = defaultResources;
+    }
+    return Squad;
 }());
-
-Squad.prototype.isReadyToMove;
-Squad.prototype.isReadyToFight;
-Squad.prototype.restore;
-Squad.prototype.getReadyToMoveResources;
-Squad.prototype.combineResources;
-Squad.prototype.cloneResource;
-
 
 var squad = new Squad([mag, mag2]);
 console.log(squad.squad);
-console.log(Squad.prototype.restore());
+console.log(squad.isReadytoMove);
+console.log(squad.restore);
 
-// Squad.prototype.isReadyToMove = function () {
-//   return this.distance > 0;
-// }
 
-// Squad.prototype.isReadyToFight = function () {
-//   return this.health > 0;
-// }
