@@ -5,19 +5,19 @@ var Squad = (function () {
     }
 
 
-    Squad.prototype.isReadyToMove = function (defaultResources) {
+    Squad.prototype.isReadyToMove = function () {
         return this.squad.some((obj) => (obj.health > 0 && obj.distance > 0));
     }
 
-    Squad.prototype.isReadyToFight = function (defaultResources) {
+    Squad.prototype.isReadyToFight = function () {
         return this.squad.some((obj) => (obj.health > 0));
     }
 
-    Squad.prototype.restore = function (defaultResources) {
+    Squad.prototype.restore = function () {
         squad.MilitaryResource = new MilitaryResource(this.type, this.health, this.maxHealth, this.distance, this.maxDistance);
     }
 
-    Squad.prototype.getReadyToMoveResources = function (defaultResources) {
+    Squad.prototype.getReadyToMoveResources = function () {
         return this.squad.some((obj) => (obj.health > 0 && obj.distance > 0));
     }
     Squad.prototype.combineResources = function (defaultResources) {
@@ -28,7 +28,7 @@ var Squad = (function () {
 
 var squad = new Squad([mag, mag2]);
 console.log(squad.squad);
-console.log(squad.isReadytoMove);
-console.log(squad.restore);
+console.log(squad.isReadytoMove());
+console.log(squad.restore());
 
 
