@@ -5,10 +5,8 @@ var MilitaryResource = (function () {
     this.maxHealth = maxHealth;
     this.distance = maxDistance = distance;
     this.maxDistance = maxDistance;
-  }S
-
-
-
+  }
+  
   MilitaryResource.prototype.isReadytoMove = function () {
     return this.distance <= this.maxDistance;
   }
