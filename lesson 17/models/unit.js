@@ -7,7 +7,7 @@ var Unit = (function () {
     }
 
     Unit.prototype.attack = function (Unit) {
-       console.log(Unit);
+        this.health -= Unit.damage;
     }
 
     return Unit;
