@@ -1,0 +1,8 @@
+    .div_one {
+    position:relative;
+    float:left;
+    left:5px;
+    background-color:red;
+    width:30px;
+    height:30px;
+    }
