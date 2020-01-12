@@ -1,7 +1,4 @@
-
 ////////////Some//////////////////////////
-
-
 function some(name, lastname, marks) {
     console.log(name);
     console.log(lastname);
@@ -23,7 +20,7 @@ some('Vasya', 'Pupkin', 5, 6, 12);
 
 ////////////метод Filter, показывает значения больше 0//////////////////////////
 
-function forEach(arr, cb = function () { }) {
+function forEach(arr, cb = function() {}) {
     for (let i = 0; i < arr.length; i++) {
         cb();
         if (arr[i] > 0) {
