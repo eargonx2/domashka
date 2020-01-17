@@ -1,19 +1,19 @@
 ////////////Some//////////////////////////
-function some(name, lastname, marks) {
-    console.log(name);
-    console.log(lastname);
-    console.log(marks);
+const arr = [1, -1, 2, -2, 3];
+
+function some(arr, cb) {
+    for (let i = 0; i < arr.length; i++) {
+        if (cb(arr[i], i, arr)) {
+            return true;
+        }
+    }
+    return false;
 }
 
-some('Vasya', 'Pupkin', [5, 6, 12]);
 
-function some(name, lastname, ...marks) {
-    console.log(name);
-    console.log(lastname);
-    console.log(marks);
-}
-
-some('Vasya', 'Pupkin', 5, 6, 12);
+console.log(some(arr, el => {
+    return el == 1;
+}));
 
 
 
