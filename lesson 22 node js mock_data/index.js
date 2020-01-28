@@ -6,7 +6,7 @@ const server = http.createServer((request, response) => {
   readFileWithPromise("./MOCK_DATA.json")
     .then(data => {
       response.statusCode = 200;
-      response.setHeader("Content-Type", "text/plain");
+      response.setHeader("Content-Type", "application/json");
       response.end(data);
     })
 });
